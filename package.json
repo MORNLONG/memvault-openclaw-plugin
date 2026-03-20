@@ -1,0 +1,77 @@
+{
+	"name": "@mornlong/openclaw-memvault",
+	"version": "0.2.4",
+	"type": "module",
+	"description": "MemVault memory plugin for OpenClaw — persistent long-term memory backed by vector search",
+	"author": "MORNLONG",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MORNLONG/memvault-openclaw-plugin.git"
+	},
+	"homepage": "https://mv.mornlong.com/",
+	"bugs": {
+		"url": "https://github.com/MORNLONG/memvault-openclaw-plugin/issues"
+	},
+	"funding": {
+		"type": "github",
+		"url": "https://github.com/sponsors/MORNLONG"
+	},
+	"keywords": [
+		"openclaw",
+		"openclaw-plugin",
+		"memvault",
+		"ai-agent",
+		"long-term-memory",
+		"vector-search",
+		"qdrant",
+		"typescript",
+		"plugin"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"dependencies": {
+		"@sinclair/typebox": "0.34.47"
+	},
+	"peerDependencies": {
+		"openclaw": ">=2026.1.29"
+	},
+	"files": [
+		"dist/",
+		"openclaw.plugin.json",
+		"scripts/setup.sh",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"openclaw": {
+		"kind": "plugin",
+		"capabilities": ["vector-storage", "memory-api"],
+		"requires": { "openclaw": ">=2026.1.29" },
+		"extensions": ["./dist/index.js"],
+		"install": {
+			"npmSpec": "@mornlong/openclaw-memvault",
+			"localPath": ".",
+			"defaultChoice": "npm"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc",
+		"check-types": "tsc --noEmit",
+		"audit": "npm audit --omit=dev",
+		"test": "node --test tests/**/*.test.mjs",
+		"prepack": "npm run build",
+		"setup": "bash scripts/setup.sh"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.10",
+		"openclaw": "2026.3.13",
+		"typescript": "^5.9.3"
+	}
+}

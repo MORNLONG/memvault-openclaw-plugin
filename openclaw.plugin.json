@@ -1,0 +1,65 @@
+{
+	"id": "openclaw-memvault",
+	"kind": "memory",
+	"name": "MemVault",
+	"description": "Persistent long-term memory backed by MemVault vector search",
+	"version": "0.2.4",
+	"uiHints": {
+		"apiUrl": {
+			"label": "API URL（可选）",
+			"placeholder": "https://api.mv.mornlong.com:8443",
+			"help": "默认连接 MemVault API，一般无需修改",
+			"advanced": true
+		},
+		"autoRecall": {
+			"label": "Auto-Recall",
+			"help": "Inject relevant memories before every AI turn"
+		},
+		"autoCapture": {
+			"label": "Auto-Capture",
+			"help": "Automatically store important information from conversations"
+		},
+		"maxRecallResults": {
+			"label": "Max Recall Results",
+			"placeholder": "5",
+			"help": "Maximum memories injected into context per turn",
+			"advanced": true
+		},
+		"recallTimeoutMs": {
+			"label": "Recall Timeout (ms)",
+			"placeholder": "3500",
+			"help": "Skip recall if MemVault lookup takes too long, so the main LLM response is not delayed",
+			"advanced": true
+		},
+		"scoreThreshold": {
+			"label": "Score Threshold",
+			"placeholder": "0.4",
+			"help": "Minimum similarity score for recalled memories (0-1)",
+			"advanced": true
+		},
+		"debug": {
+			"label": "Debug Logging",
+			"help": "Enable verbose debug logs",
+			"advanced": true
+		}
+	},
+	"configPatch": {
+		"tools": {
+			"alsoAllow": ["openclaw-memvault"]
+		}
+	},
+	"configSchema": {
+		"type": "object",
+		"additionalProperties": false,
+		"properties": {
+			"apiUrl": { "type": "string" },
+			"autoRecall": { "type": "boolean" },
+			"autoCapture": { "type": "boolean" },
+			"maxRecallResults": { "type": "number", "minimum": 1, "maximum": 50 },
+			"recallTimeoutMs": { "type": "number", "minimum": 500, "maximum": 10000 },
+			"scoreThreshold": { "type": "number", "minimum": 0, "maximum": 1 },
+			"debug": { "type": "boolean" }
+		},
+		"required": []
+	}
+}

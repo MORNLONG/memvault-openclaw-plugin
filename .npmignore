@@ -1,0 +1,8 @@
+src/
+.github/
+node_modules/
+tests/
+*.log
+tsconfig.json
+scripts/deploy.sh
+scripts/test-*.sh
