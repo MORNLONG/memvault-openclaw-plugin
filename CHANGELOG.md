@@ -2,6 +2,15 @@
 
 All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
+## [0.2.5] - 2026-03-29
+
+### Changed
+
+- Expanded first-run session migration to cover `active`, `reset`, and
+  `deleted` OpenClaw session archives instead of only active `.jsonl` files.
+- Updated migration logging and README copy to reflect the broader archive
+  coverage.
+
 ## [0.2.4] - 2026-03-20
 
 ### Changed
@@ -69,7 +78,7 @@ All notable changes to `@mornlong/openclaw-memvault` are documented here.
 - Automatic first-start migration for:
   - `MEMORY.md`
   - `memory/*.md`
-  - current valid OpenClaw session transcripts
+  - OpenClaw session transcripts available on disk at install time
 
 ### Changed
 

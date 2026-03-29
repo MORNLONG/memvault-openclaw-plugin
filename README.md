@@ -31,7 +31,7 @@ cloud-backed timeline with:
 - semantic recall for fuzzy memory lookup
 - exact transcript retrieval for original wording
 - event provenance with timestamps, device identity, and source metadata
-- first-run migration from existing OpenClaw memory files and active sessions
+- first-run migration from existing OpenClaw memory files and session archives
 
 OpenClaw is the first production integration. More Agent clients will follow,
 but this repository is focused on the OpenClaw plugin only.
@@ -60,7 +60,7 @@ The intended user experience is:
 - First-start migration:
   - `MEMORY.md`
   - `memory/*.md`
-  - current valid OpenClaw session transcripts
+  - OpenClaw session transcripts across `active/reset/deleted` files
 - Cross-device continuity after account linking
 - Explicit tools for search, store, and forget flows
 

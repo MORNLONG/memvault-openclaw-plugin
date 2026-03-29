@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync, statSync, writeFileSync, } from 
 import { join } from "node:path";
 const MIGRATE_MARKER = ".memvault-migrated";
 const SESSION_MIGRATE_MARKER = ".memvault-sessions-migrated";
+const SESSION_FILE_RE = /^(?<sessionId>[0-9a-z_-]+)\.jsonl(?:\.(?<state>reset|deleted)\..+)?$/i;
 function fileMtimeSeconds(path) {
     try {
         return Math.floor(statSync(path).mtimeMs / 1000);
@@ -61,18 +62,37 @@ function findSessionsDir() {
     }
     return null;
 }
-function isActiveSessionFile(file) {
-    return /^[0-9a-f-]+\.jsonl$/i.test(file);
+function getSessionState(file) {
+    const match = SESSION_FILE_RE.exec(file);
+    if (!match)
+        return null;
+    const state = match.groups?.state?.toLowerCase();
+    if (state === "reset" || state === "deleted")
+        return state;
+    return "active";
 }
 function collectSessionLogs(sessionsDir) {
     const sources = [];
-    const files = readdirSync(sessionsDir).filter(isActiveSessionFile);
+    const files = readdirSync(sessionsDir).filter((file) => getSessionState(file) !== null);
     for (const file of files) {
         const source = readSource(join(sessionsDir, file), file);
         if (source)
             sources.push(source);
     }
     return sources;
+}
+function summarizeSessionStates(sources) {
+    const counts = {
+        active: 0,
+        reset: 0,
+        deleted: 0,
+    };
+    for (const source of sources) {
+        const state = getSessionState(source.path);
+        if (state)
+            counts[state] += 1;
+    }
+    return `active=${counts.active}, reset=${counts.reset}, deleted=${counts.deleted}`;
 }
 export async function runMigration(client, cfg, logger, _deviceId) {
     const workspace = findWorkspace();
@@ -104,9 +124,9 @@ export async function runMigration(client, cfg, logger, _deviceId) {
     if (needSessionMigration) {
         const sessionsDir = findSessionsDir();
         if (sessionsDir) {
-            logger.info("memvault migration: importing active session history...");
+            logger.info("memvault migration: importing session history (active/reset/deleted)...");
             sessionLogs = collectSessionLogs(sessionsDir);
-            logger.info(`  Session logs: ${sessionLogs.length} active .jsonl files`);
+            logger.info(`  Session logs: ${sessionLogs.length} files (${summarizeSessionStates(sessionLogs)})`);
         }
         else {
             logger.info("memvault migration: sessions directory not found, skipping");

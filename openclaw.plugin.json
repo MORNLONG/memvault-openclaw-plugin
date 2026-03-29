@@ -3,7 +3,7 @@
 	"kind": "memory",
 	"name": "MemVault",
 	"description": "Persistent long-term memory backed by MemVault vector search",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"uiHints": {
 		"apiUrl": {
 			"label": "API URL（可选）",
