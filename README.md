@@ -1,4 +1,8 @@
 <p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
   <img src="https://raw.githubusercontent.com/MORNLONG/memvault-openclaw-plugin/main/assets/memvault-logo.svg" alt="MemVault" width="560" />
 </p>
 
@@ -16,55 +20,44 @@
 
 ## Overview
 
-MemVault is the **long-term memory layer for OpenClaw**.
+MemVault is the long-term memory layer for OpenClaw.
 
-It gives OpenClaw a durable memory space that survives:
+It gives OpenClaw a durable, cloud-backed memory space that survives:
 
 - new conversations
 - process restarts
 - device changes
 - account linking after first install
 
-Instead of relying on a single local chat window, MemVault stores memory as a
-cloud-backed timeline with:
+The current public repository is focused on the OpenClaw plugin only. OpenClaw
+is the first production client, and more Agent clients will follow later.
 
-- semantic recall for fuzzy memory lookup
-- exact transcript retrieval for original wording
-- event provenance with timestamps, device identity, and source metadata
-- first-run migration from existing OpenClaw memory files and session archives
+## User Flow
 
-OpenClaw is the first production integration. More Agent clients will follow,
-but this repository is focused on the OpenClaw plugin only.
-
-## Why It Exists
-
-Most AI agents lose context in one of three ways:
-
-- they compress long histories until details disappear
-- they keep memory on one machine only
-- they forget earlier transcripts when a session or device changes
-
-MemVault is designed to fix that without forcing a heavy onboarding flow.
-
-The intended user experience is:
+MemVault is designed around a low-friction flow:
 
 1. install the plugin
-2. use the free tier immediately
-3. connect an email-backed account later with `{/mvstatus}` when needed
+2. start using the free tier immediately
+3. connect your account later with `{/mvstatus}` when you need it
 4. keep the same memory space across devices
+
+No manual API key is required for normal users.
 
 ## What The Plugin Does
 
-- Auto-recall: injects relevant memory before the model responds
-- Auto-capture: stores important turns after each conversation
-- First-start migration:
+- Auto-recall before OpenClaw builds the next prompt
+- Auto-capture after each agent run
+- First-run migration for:
   - `MEMORY.md`
   - `memory/*.md`
-  - OpenClaw session transcripts across `active/reset/deleted` files
+  - OpenClaw session archives under `active`, `reset`, and `deleted`
 - Cross-device continuity after account linking
-- Explicit tools for search, store, and forget flows
+- Explicit tools for search, store, and forget workflows
+- Free-tier quota awareness with account-link and upgrade guidance
 
 ## Installation
+
+Recommended install path:
 
 ```bash
 openclaw plugins install @mornlong/openclaw-memvault
@@ -72,18 +65,21 @@ bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
 
-Once installed:
+What happens after install:
 
-- the plugin starts with a hidden device identity
-- the free plan is available immediately
-- no manual API key is required
+- the plugin creates a hidden device identity locally
+- the free tier is available immediately
+- account linking stays optional until you want cross-device continuity or more capacity
 - `{/mvstatus}` shows plan, usage, and connection status
+
+`scripts/setup.sh` adds the plugin to both `plugins.allow` and
+`tools.alsoAllow`, so the explicit MemVault tools are visible to the model.
 
 ## Commands And Tools
 
 ### Slash command
 
-- `{/mvstatus}`: show current plan, usage, and account connection status
+- `{/mvstatus}`: show plan, usage, and current account connection state
 
 ### Agent tools
 
@@ -91,12 +87,9 @@ Once installed:
 - `memvault_store`
 - `memvault_forget`
 
-These tools are available to the model after `scripts/setup.sh` adds the plugin
-to both `plugins.allow` and `tools.alsoAllow`.
+## Defaults
 
-## Default Behavior
-
-The plugin is optimized for low-friction use and sensible defaults:
+The plugin is optimized for install-first usage with conservative defaults:
 
 | Option | Default | Purpose |
 | --- | --- | --- |
@@ -114,16 +107,28 @@ Environment variable fallback:
 | --- | --- |
 | `MEMVAULT_API_URL` | `apiUrl` |
 
-## Plans
+## Plans And Billing
 
-Current live plans:
+Capacity tiers currently available to the plugin:
 
-| Plan | Price | Storage | Queries |
-| --- | --- | --- | --- |
-| Free | ¥0 | 3 MB | 500 / day |
-| Plus | ¥9 / month | 20 MB | 5,000 / day |
-| Pro | ¥29 / month | 100 MB | 20,000 / day |
-| Team | ¥99 / month | 2 GB | 100,000 / day |
+| Plan | Storage | Queries |
+| --- | --- | --- |
+| Free | 3 MB | 500 / day |
+| Plus | 20 MB | 5,000 / day |
+| Pro | 100 MB | 20,000 / day |
+| Team | 2 GB | 100,000 / day |
+
+Billing is handled on the Portal:
+
+- Mainland China: `CNY` with WeChat Pay or Alipay
+- Global: `USD` with Stripe Checkout
+- The Portal follows the current language path directly instead of asking the user to switch regions manually
+
+Pricing and account management:
+
+- Website: <https://mv.mornlong.com/>
+- Pricing: <https://mv.mornlong.com/pricing>
+- Account dashboard: <https://mv.mornlong.com/dashboard>
 
 ## Repository Layout
 
@@ -134,16 +139,26 @@ Current live plans:
 ├── tests/                 # Smoke tests
 ├── scripts/setup.sh       # Trust-list bootstrap helper
 ├── openclaw.plugin.json   # OpenClaw plugin manifest
-└── .github/workflows/     # CI and trusted publish workflows
+└── .github/workflows/     # CI and publish workflows
 ```
 
-`dist/` is intentionally kept in the repository because OpenClaw local-path
-installs should work without assuming a local TypeScript build step.
+`dist/` stays in the repository on purpose so local-path OpenClaw installs do
+not depend on a TypeScript build step.
+
+## Development
+
+```bash
+npm ci
+npm run build
+npm test
+```
+
+For contribution and release details, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Links
 
 - Website: <https://mv.mornlong.com/>
-- Product repo: <https://github.com/MORNLONG/memvault-openclaw-plugin>
+- Public product repo: <https://github.com/MORNLONG/memvault-openclaw-plugin>
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 - Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
