@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  Long-term memory for OpenClaw. Install first, connect your account later.
+  Augmented Memory for AI Agents. Persistent memory and stronger recall across sessions and devices.
 </p>
 
 <p align="center">
@@ -20,7 +20,8 @@
 
 ## Overview
 
-MemVault is the long-term memory layer for OpenClaw.
+The MemVault plugin is OpenClaw's long-term memory layer. Context compression
+is a critical weakness for AI Agents, and MemVault makes it easy to fix.
 
 It gives OpenClaw a durable, cloud-backed memory space that survives:
 
@@ -41,12 +42,10 @@ MemVault is designed around a low-friction flow:
 3. connect your account later with `{/mvstatus}` when you need it
 4. keep the same memory space across devices
 
-No manual API key is required for normal users.
-
 ## What The Plugin Does
 
 - Auto-recall before OpenClaw builds the next prompt
-- Auto-capture after each agent run
+- Auto-capture after each agent run, preserving important content in full
 - First-run migration for:
   - `MEMORY.md`
   - `memory/*.md`
@@ -67,7 +66,7 @@ openclaw gateway restart
 
 What happens after install:
 
-- the plugin creates a hidden device identity locally
+- the plugin creates a device identity locally
 - the free tier is available immediately
 - account linking stays optional until you want cross-device continuity or more capacity
 - `{/mvstatus}` shows plan, usage, and connection status
@@ -89,7 +88,7 @@ What happens after install:
 
 ## Defaults
 
-The plugin is optimized for install-first usage with conservative defaults:
+The plugin is optimized for install-first usage:
 
 | Option | Default | Purpose |
 | --- | --- | --- |
@@ -118,11 +117,10 @@ Capacity tiers currently available to the plugin:
 | Pro | 100 MB | 20,000 / day |
 | Team | 2 GB | 100,000 / day |
 
-Billing is handled on the Portal:
+Payment methods include:
 
 - Mainland China: `CNY` with WeChat Pay or Alipay
 - Global: `USD` with Stripe Checkout
-- The Portal follows the current language path directly instead of asking the user to switch regions manually
 
 Pricing and account management:
 

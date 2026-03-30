@@ -2,7 +2,7 @@
 
 All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
-## [Unreleased]
+## [0.2.5] - 2026-03-29
 
 ### Added
 
@@ -10,17 +10,12 @@ All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
 ### Changed
 
-- Updated the public plugin documentation to match the current install-first,
-  link-later flow, current migration behavior, and current Portal billing model.
-
-## [0.2.5] - 2026-03-29
-
-### Changed
-
 - Expanded first-run session migration to cover `active`, `reset`, and
   `deleted` OpenClaw session archives instead of only active `.jsonl` files.
 - Updated migration logging and README copy to reflect the broader archive
   coverage.
+- Updated the public plugin documentation to match the current install-first,
+  link-later flow, current migration behavior, and current Portal billing model.
 
 ## [0.2.4] - 2026-03-20
 
