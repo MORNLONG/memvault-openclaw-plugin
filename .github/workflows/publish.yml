@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
+          scope: "@mornlong"
 
       - run: npm ci
 
@@ -32,3 +33,5 @@ jobs:
       - run: npm pack --dry-run
 
       - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
