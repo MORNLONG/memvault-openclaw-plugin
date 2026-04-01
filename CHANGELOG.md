@@ -2,6 +2,15 @@
 
 All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
+## [0.2.6] - 2026-04-01
+
+### Changed
+
+- Switched the npm release pipeline to GitHub Actions trusted publishing with
+  OIDC, removing the repository-side long-lived npm publish token dependency.
+- Standardized the public package release process around GitHub Release +
+  npm trusted publishing verification.
+
 ## [0.2.5] - 2026-03-29
 
 ### Added

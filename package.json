@@ -1,6 +1,6 @@
 {
 	"name": "@mornlong/openclaw-memvault",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"type": "module",
 	"description": "MemVault memory plugin for OpenClaw — persistent long-term memory backed by vector search",
 	"author": "MORNLONG",
