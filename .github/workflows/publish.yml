@@ -35,4 +35,22 @@ jobs:
 
       - run: npm pack --dry-run
 
-      - run: npm publish
+      - id: package
+        run: |
+          echo "name=$(node -p "require('./package.json').name")" >> "$GITHUB_OUTPUT"
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - id: registry
+        run: |
+          package="${{ steps.package.outputs.name }}@${{ steps.package.outputs.version }}"
+          if npm view "$package" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.registry.outputs.published != 'true'
+        run: npm publish
+
+      - if: steps.registry.outputs.published == 'true'
+        run: echo "Package already published; skipping npm publish."
