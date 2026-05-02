@@ -3,12 +3,12 @@
 	"kind": "memory",
 	"name": "MemVault",
 	"description": "Persistent long-term memory backed by MemVault vector search",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"uiHints": {
 		"apiUrl": {
-			"label": "API URL（可选）",
+			"label": "API URL (optional)",
 			"placeholder": "https://api.mv.mornlong.com:8443",
-			"help": "默认连接 MemVault API，一般无需修改",
+			"help": "Defaults to the hosted MemVault API. Most users do not need to change this.",
 			"advanced": true
 		},
 		"autoRecall": {

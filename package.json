@@ -1,6 +1,6 @@
 {
 	"name": "@mornlong/openclaw-memvault",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"type": "module",
 	"description": "MemVault memory plugin for OpenClaw — persistent long-term memory backed by vector search",
 	"author": "MORNLONG",
@@ -41,6 +41,7 @@
 	},
 	"files": [
 		"dist/",
+		"docs/",
 		"openclaw.plugin.json",
 		"scripts/setup.sh",
 		"README.md",
@@ -53,6 +54,15 @@
 		"capabilities": ["vector-storage", "memory-api"],
 		"requires": { "openclaw": ">=2026.1.29" },
 		"extensions": ["./dist/index.js"],
+		"runtimeExtensions": ["./dist/index.js"],
+		"compat": {
+			"pluginApi": ">=2026.1.29",
+			"minGatewayVersion": "2026.1.29"
+		},
+		"build": {
+			"openclawVersion": "2026.3.13",
+			"pluginSdkVersion": "2026.3.13"
+		},
 		"install": {
 			"npmSpec": "@mornlong/openclaw-memvault",
 			"localPath": ".",

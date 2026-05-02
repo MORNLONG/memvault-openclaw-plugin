@@ -2,6 +2,17 @@
 
 All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
+## [0.2.7] - 2026-05-02
+
+### Changed
+
+- Included the quickstart documentation in the npm package so package viewers
+  and registry mirrors can resolve the README quickstart link.
+- Changed the plugin manifest API URL label and help copy to English for
+  better default presentation in international OpenClaw plugin surfaces.
+- Added ClawHub package compatibility and build metadata so registry validation
+  can identify the runtime entrypoint and supported OpenClaw range.
+
 ## [0.2.6] - 2026-04-01
 
 ### Changed
