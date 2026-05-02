@@ -73,6 +73,9 @@ openclaw gateway restart
 `scripts/setup.sh` 会一次性补齐 `plugins.allow` 和 `tools.alsoAllow`，
 确保显式的 MemVault 工具能被模型看到。
 
+如果需要一步步验证安装结果，见
+[OpenClaw 使用 MemVault 快速开始](./docs/quickstart.zh-CN.md)。
+
 ## 命令与工具
 
 ### Slash 命令
@@ -156,6 +159,7 @@ npm test
 - 官网：<https://mv.mornlong.com/>
 - 公开仓库：<https://github.com/MORNLONG/memvault-openclaw-plugin>
 - 问题反馈：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
+- 快速开始：[docs/quickstart.zh-CN.md](./docs/quickstart.zh-CN.md)
 - 更新日志：[CHANGELOG.md](./CHANGELOG.md)
 - 贡献指南：[CONTRIBUTING.md](./CONTRIBUTING.md)
 - 安全策略：[SECURITY.md](./SECURITY.md)

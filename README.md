@@ -74,6 +74,9 @@ What happens after install:
 `scripts/setup.sh` adds the plugin to both `plugins.allow` and
 `tools.alsoAllow`, so the explicit MemVault tools are visible to the model.
 
+For a step-by-step verification flow, see
+[MemVault Quickstart for OpenClaw](./docs/quickstart.md).
+
 ## Commands And Tools
 
 ### Slash command
@@ -158,6 +161,7 @@ For contribution and release details, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 - Website: <https://mv.mornlong.com/>
 - Public product repo: <https://github.com/MORNLONG/memvault-openclaw-plugin>
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
+- Quickstart: [docs/quickstart.md](./docs/quickstart.md)
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 - Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
 - Security: [SECURITY.md](./SECURITY.md)
