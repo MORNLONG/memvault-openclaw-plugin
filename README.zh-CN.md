@@ -53,6 +53,13 @@ MemVault 的设计目标是低门槛接入：
 - 提供显式搜索、存储、遗忘工具
 - 带有 Free 套餐额度感知，以及连接账户 / 升级引导
 
+## 常见使用场景
+
+- 长对话压缩后，找回项目背景
+- 记住端口、配置路径、部署说明和历史决策
+- 连接账户后，在另一台设备继续同一个 OpenClaw 项目
+- 用语义检索和明确提示找回旧上下文
+
 ## 安装
 
 推荐安装方式：
@@ -122,7 +129,7 @@ openclaw gateway restart
 支付方式包括：
 
 - 中国大陆：`CNY`，使用微信支付或支付宝
-- 全球：`USD`，使用 Stripe Checkout
+- 全球：`USD` 套餐已在价格页展示；全球支付当前标记为暂不可用
 
 价格与账户入口：
 
@@ -160,6 +167,7 @@ npm test
 - 公开仓库：<https://github.com/MORNLONG/memvault-openclaw-plugin>
 - 问题反馈：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - 快速开始：[docs/quickstart.zh-CN.md](./docs/quickstart.zh-CN.md)
+- FAQ：[docs/faq.zh-CN.md](./docs/faq.zh-CN.md)
 - 更新日志：[CHANGELOG.md](./CHANGELOG.md)
 - 贡献指南：[CONTRIBUTING.md](./CONTRIBUTING.md)
 - 安全策略：[SECURITY.md](./SECURITY.md)

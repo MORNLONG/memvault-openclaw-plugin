@@ -8,6 +8,10 @@ All notable changes to `@mornlong/openclaw-memvault` are documented here.
 
 - Included the quickstart documentation in the npm package so package viewers
   and registry mirrors can resolve the README quickstart link.
+- Added FAQ documentation for installation checks, account linking, usage
+  limits, and issue reporting.
+- Corrected README billing copy to state that global payments are currently
+  marked as temporarily unavailable.
 - Changed the plugin manifest API URL label and help copy to English for
   better default presentation in international OpenClaw plugin surfaces.
 - Added ClawHub package compatibility and build metadata so registry validation

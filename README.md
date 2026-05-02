@@ -54,6 +54,13 @@ MemVault is designed around a low-friction flow:
 - Explicit tools for search, store, and forget workflows
 - Free-tier quota awareness with account-link and upgrade guidance
 
+## Common Use Cases
+
+- Recover project details after long conversations are compressed
+- Remember local ports, config paths, deployment notes, and previous decisions
+- Continue an OpenClaw project from another device after account linking
+- Search old context with semantic recall and explicit keyword-like prompts
+
 ## Installation
 
 Recommended install path:
@@ -123,7 +130,8 @@ Capacity tiers currently available to the plugin:
 Payment methods include:
 
 - Mainland China: `CNY` with WeChat Pay or Alipay
-- Global: `USD` with Stripe Checkout
+- Global: `USD` plans are shown on the pricing page; global payments are
+  currently marked as temporarily unavailable
 
 Pricing and account management:
 
@@ -162,6 +170,7 @@ For contribution and release details, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 - Public product repo: <https://github.com/MORNLONG/memvault-openclaw-plugin>
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - Quickstart: [docs/quickstart.md](./docs/quickstart.md)
+- FAQ: [docs/faq.md](./docs/faq.md)
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 - Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
 - Security: [SECURITY.md](./SECURITY.md)
