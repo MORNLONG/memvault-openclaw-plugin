@@ -165,6 +165,7 @@ npm test
 
 - 官网：<https://mv.mornlong.com/>
 - 公开仓库：<https://github.com/MORNLONG/memvault-openclaw-plugin>
+- ClawHub：<https://clawhub.ai/plugins/%40mornlong%2Fopenclaw-memvault>
 - 问题反馈：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - 快速开始：[docs/quickstart.zh-CN.md](./docs/quickstart.zh-CN.md)
 - FAQ：[docs/faq.zh-CN.md](./docs/faq.zh-CN.md)

@@ -168,6 +168,7 @@ For contribution and release details, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 - Website: <https://mv.mornlong.com/>
 - Public product repo: <https://github.com/MORNLONG/memvault-openclaw-plugin>
+- ClawHub: <https://clawhub.ai/plugins/%40mornlong%2Fopenclaw-memvault>
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - Quickstart: [docs/quickstart.md](./docs/quickstart.md)
 - FAQ: [docs/faq.md](./docs/faq.md)
