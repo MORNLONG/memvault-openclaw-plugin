@@ -1,0 +1,33 @@
+name: Publish ClawHub Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview package publish without uploading"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  dry-run:
+    if: github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true'
+    uses: openclaw/clawhub/.github/workflows/package-publish.yml@v0.12.0
+    with:
+      dry_run: true
+
+  publish:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'
+    uses: openclaw/clawhub/.github/workflows/package-publish.yml@v0.12.0
+    with:
+      dry_run: false
+    secrets:
+      clawhub_token: ${{ secrets.CLAWHUB_TOKEN }}
