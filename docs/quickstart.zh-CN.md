@@ -57,6 +57,29 @@ MemVault 可以帮助 OpenClaw 召回已经保存的项目细节。连接账户�
 - `memvault_forget`
 - `{/mvstatus}`
 
+## 排查
+
+- 如果找不到 `{/mvstatus}`，请重新执行 `setup.sh` 并重启 gateway：
+
+```bash
+bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
+openclaw gateway restart
+```
+
+## 分享（可复制）
+
+如果你觉得有用，可以把“安装 + 验证”片段分享出去：
+
+```text
+MemVault 给 OpenClaw 增加云端长期记忆。
+
+openclaw plugins install clawhub:@mornlong/openclaw-memvault
+bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
+openclaw gateway restart
+
+{/mvstatus}
+```
+
 ## 相关链接
 
 - 官网：<https://mv.mornlong.com/>

@@ -182,6 +182,7 @@ For contribution and release details, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - Quickstart: [docs/quickstart.md](./docs/quickstart.md)
 - FAQ: [docs/faq.md](./docs/faq.md)
+- Share snippet: [docs/quickstart.md#share-copypaste](./docs/quickstart.md#share-copypaste)
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 - Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
 - Security: [SECURITY.md](./SECURITY.md)

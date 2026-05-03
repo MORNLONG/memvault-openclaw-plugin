@@ -179,6 +179,7 @@ npm test
 - 问题反馈：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
 - 快速开始：[docs/quickstart.zh-CN.md](./docs/quickstart.zh-CN.md)
 - FAQ：[docs/faq.zh-CN.md](./docs/faq.zh-CN.md)
+- 分享片段：[docs/quickstart.zh-CN.md#分享可复制](./docs/quickstart.zh-CN.md#%E5%88%86%E4%BA%AB%EF%BC%88%E5%8F%AF%E5%A4%8D%E5%88%B6%EF%BC%89)
 - 更新日志：[CHANGELOG.md](./CHANGELOG.md)
 - 贡献指南：[CONTRIBUTING.md](./CONTRIBUTING.md)
 - 安全策略：[SECURITY.md](./SECURITY.md)

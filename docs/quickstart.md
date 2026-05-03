@@ -61,6 +61,29 @@ The plugin provides:
 - `memvault_forget`
 - `{/mvstatus}`
 
+## Troubleshooting
+
+- If `{/mvstatus}` is missing, re-run `scripts/setup.sh` and restart the gateway:
+
+```bash
+bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
+openclaw gateway restart
+```
+
+## Share (copy/paste)
+
+If this helps, share a quick install + verification snippet:
+
+```text
+MemVault adds cloud long-term memory to OpenClaw.
+
+openclaw plugins install clawhub:@mornlong/openclaw-memvault
+bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
+openclaw gateway restart
+
+{/mvstatus}
+```
+
 ## Useful Links
 
 - Website: <https://mv.mornlong.com/>
