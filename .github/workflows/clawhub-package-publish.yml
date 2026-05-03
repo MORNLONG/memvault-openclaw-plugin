@@ -12,22 +12,47 @@ on:
           - "true"
           - "false"
   pull_request:
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
-  dry-run:
-    if: github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true'
-    uses: openclaw/clawhub/.github/workflows/package-publish.yml@v0.12.0
-    with:
-      dry_run: true
+  package-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  publish:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'
-    uses: openclaw/clawhub/.github/workflows/package-publish.yml@v0.12.0
-    with:
-      dry_run: false
-    secrets:
-      clawhub_token: ${{ secrets.CLAWHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Pack (ClawPack .tgz)
+        id: pack
+        run: echo "tgz=$(npm pack --silent)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish (dry-run)
+        if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'true')
+        run: npx -y clawhub@latest package publish "./${{ steps.pack.outputs.tgz }}" --family code-plugin --dry-run --json > clawhub-result.json
+
+      - name: Publish
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false')
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: npx -y clawhub@latest package publish "./${{ steps.pack.outputs.tgz }}" --family code-plugin --json > clawhub-result.json
+
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clawhub-result
+          path: clawhub-result.json
