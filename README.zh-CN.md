@@ -70,9 +70,15 @@ openclaw plugins install clawhub:@mornlong/openclaw-memvault
 
 # 方式 B（npm）
 openclaw plugins install @mornlong/openclaw-memvault
+
+# 然后（两种安装方式都需要执行一次）
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
+
+注：如果 ClawHub 的 **Artifact** 显示 `Legacy ZIP`，插件仍然可以正常安装和使用；
+这只表示产物还没升级到 ClawPack。见
+[FAQ](./docs/faq.zh-CN.md#clawhub-的-artifact-显示-legacy-zip-是什么还能用吗)。
 
 安装后会发生这些事：
 

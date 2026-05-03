@@ -44,6 +44,21 @@ Automatic recall and capture are enabled by default.
 The Free tier includes 3 MB storage and 500 queries per day. Higher tiers are
 listed on the pricing page.
 
+## ClawHub shows "Legacy ZIP" under Artifact — is it safe to use?
+
+Yes. The plugin install command is still the same and the plugin should work
+normally.
+
+ClawHub's "Legacy ZIP" label means the package hasn't been upgraded to the
+latest OpenClaw plugin architecture yet, and ClawHub may warn about potential
+compatibility issues until a ClawPack artifact is uploaded.
+
+If you hit any install/runtime issues, try installing from npm instead:
+
+```text
+openclaw plugins install @mornlong/openclaw-memvault
+```
+
 ## Are global payments available?
 
 The pricing page shows USD plans, but global payments are currently marked as

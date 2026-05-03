@@ -71,9 +71,15 @@ openclaw plugins install clawhub:@mornlong/openclaw-memvault
 
 # Option B (npm)
 openclaw plugins install @mornlong/openclaw-memvault
+
+# Then (required once after either install option)
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
+
+Note: If ClawHub shows `Legacy ZIP` under **Artifact**, the plugin still works.
+It only means the package has not shipped a ClawPack artifact yet. See
+[FAQ](./docs/faq.md#clawhub-shows-legacy-zip-under-artifact--is-it-safe-to-use).
 
 What happens after install:
 

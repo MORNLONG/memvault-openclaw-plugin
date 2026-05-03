@@ -43,6 +43,20 @@ OpenClaw 插件。
 
 Free 套餐包含 3 MB 存储和 500 次/天查询。更高套餐见官网价格页。
 
+## ClawHub 的 Artifact 显示 “Legacy ZIP” 是什么？还能用吗？
+
+能用。安装命令不变，插件正常可用。
+
+ClawHub 的 “Legacy ZIP” 只是表示该插件的打包产物还没升级到最新的
+OpenClaw 插件架构（ClawPack），在完成升级前 ClawHub 可能会提示潜在
+兼容性风险。
+
+如果你遇到安装/运行问题，先用 npm 安装作为替代：
+
+```text
+openclaw plugins install @mornlong/openclaw-memvault
+```
+
 ## 全球支付可用吗？
 
 价格页已经展示 USD 套餐，但全球支付当前标记为暂不可用。中国大陆支付使用

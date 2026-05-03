@@ -10,6 +10,8 @@ openclaw plugins install clawhub:@mornlong/openclaw-memvault
 
 # 方式 B（npm）
 openclaw plugins install @mornlong/openclaw-memvault
+
+# 然后（两种安装方式都需要执行一次）
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```

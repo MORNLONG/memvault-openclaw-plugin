@@ -11,6 +11,8 @@ openclaw plugins install clawhub:@mornlong/openclaw-memvault
 
 # Option B (npm)
 openclaw plugins install @mornlong/openclaw-memvault
+
+# Then (required once after either install option)
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
