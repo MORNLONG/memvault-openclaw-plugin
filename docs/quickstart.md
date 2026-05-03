@@ -6,6 +6,10 @@ to install the plugin and verify that memory is available.
 ## 1. Install
 
 ```bash
+# Option A (ClawHub)
+openclaw plugins install clawhub:@mornlong/openclaw-memvault
+
+# Option B (npm)
 openclaw plugins install @mornlong/openclaw-memvault
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart

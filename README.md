@@ -66,6 +66,10 @@ MemVault is designed around a low-friction flow:
 Recommended install path:
 
 ```bash
+# Option A (ClawHub)
+openclaw plugins install clawhub:@mornlong/openclaw-memvault
+
+# Option B (npm)
 openclaw plugins install @mornlong/openclaw-memvault
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart

@@ -65,6 +65,10 @@ MemVault 的设计目标是低门槛接入：
 推荐安装方式：
 
 ```bash
+# 方式 A（ClawHub）
+openclaw plugins install clawhub:@mornlong/openclaw-memvault
+
+# 方式 B（npm）
 openclaw plugins install @mornlong/openclaw-memvault
 bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
