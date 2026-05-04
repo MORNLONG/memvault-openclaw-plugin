@@ -76,6 +76,12 @@ bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
 
+60 秒验证是否可用：
+
+1. 在 OpenClaw 里运行 `{/mvstatus}`（能看到套餐/用量/状态即可）。
+2. 先告诉它一个项目细节（端口/路径/决策）。
+3. 继续聊几轮（或重启一次）后再问它能否找回该细节。
+
 注：如果 ClawHub 的 **Artifact** 显示 `Legacy ZIP`，插件仍然可以正常安装和使用；
 这只表示产物还没升级到 ClawPack。见
 [FAQ](./docs/faq.zh-CN.md#clawhub-的-artifact-显示-legacy-zip-是什么还能用吗)。

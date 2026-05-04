@@ -77,6 +77,12 @@ bash ~/.openclaw/extensions/openclaw-memvault/scripts/setup.sh
 openclaw gateway restart
 ```
 
+Verify in ~60 seconds:
+
+1. In OpenClaw chat, run `{/mvstatus}` (you should see plan/usage/status).
+2. Tell the agent one project detail (port/path/decision).
+3. After a few turns (or a restart), ask it to recall that detail.
+
 Note: If ClawHub shows `Legacy ZIP` under **Artifact**, the plugin still works.
 It only means the package has not shipped a ClawPack artifact yet. See
 [FAQ](./docs/faq.md#clawhub-shows-legacy-zip-under-artifact--is-it-safe-to-use).
