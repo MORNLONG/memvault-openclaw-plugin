@@ -49,9 +49,12 @@ listed on the pricing page.
 Yes. The plugin install command is still the same and the plugin should work
 normally.
 
-ClawHub's "Legacy ZIP" label means the package hasn't been upgraded to the
-latest OpenClaw plugin architecture yet, and ClawHub may warn about potential
-compatibility issues until a ClawPack artifact is uploaded.
+ClawHub's "Legacy ZIP" label refers to the artifact format shown on the
+listing page for this release. It does not change how you install or use the
+plugin.
+
+On the same page, ClawHub's security checks (for example ClawScan and static
+analysis) show a benign result for this release.
 
 If you hit any install/runtime issues, try installing from npm instead:
 
