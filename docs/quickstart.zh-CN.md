@@ -84,4 +84,5 @@ openclaw gateway restart
 
 - 官网：<https://mv.mornlong.com/>
 - 套餐：<https://mv.mornlong.com/pricing>
+- ClawHub：<https://clawhub.ai/plugins/%40mornlong%2Fopenclaw-memvault>
 - 问题反馈：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
