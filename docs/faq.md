@@ -78,3 +78,10 @@ Open a GitHub issue and include:
 - relevant plugin logs, with secrets removed
 
 Issue tracker: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
+
+## Where should I ask questions or share feedback?
+
+Use GitHub Discussions for questions, setup help, and quick “worked / didn’t
+work” verification feedback:
+
+Discussions: <https://github.com/MORNLONG/memvault-openclaw-plugin/discussions>

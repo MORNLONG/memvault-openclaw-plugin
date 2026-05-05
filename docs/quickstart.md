@@ -89,4 +89,5 @@ openclaw gateway restart
 - Website: <https://mv.mornlong.com/>
 - Pricing: <https://mv.mornlong.com/pricing>
 - ClawHub: <https://clawhub.ai/plugins/%40mornlong%2Fopenclaw-memvault>
+- Discussions (Q&A / feedback): <https://github.com/MORNLONG/memvault-openclaw-plugin/discussions>
 - Issues: <https://github.com/MORNLONG/memvault-openclaw-plugin/issues>

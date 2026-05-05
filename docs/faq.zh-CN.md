@@ -75,3 +75,10 @@ openclaw plugins install @mornlong/openclaw-memvault
 - 相关插件日志，先删掉密钥和私人信息
 
 Issue 入口：<https://github.com/MORNLONG/memvault-openclaw-plugin/issues>
+
+## 问题讨论/验证反馈去哪里发？
+
+建议用 GitHub Discussions：提问、排查安装问题，以及快速反馈“成功/失败 +
+你验证了什么”，都放在这里集中追踪。
+
+Discussions：<https://github.com/MORNLONG/memvault-openclaw-plugin/discussions>
